@@ -2,4 +2,5 @@
 
 <p>Configurando el entorno</p>
 
-prueba 1
+Prueba 1
+Prueba 2
