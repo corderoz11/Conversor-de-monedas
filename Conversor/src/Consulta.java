@@ -1,9 +1,10 @@
+
+
 public class Consulta {
 
-    Scanner lectura = new Scanner(System.in);
-        System.out.println("Escriba el nombre de una pelicula: ");
-    var busqueda = lectura.nextLine();
 
+
+    public Consulta(var busqueda){
     String direccion = "https://www.omdbapi.com/?t="+busqueda+"&apikey=d4d0bf92";
 
     HttpClient client = HttpClient.newHttpClient();
@@ -14,5 +15,8 @@ public class Consulta {
             .send(request, HttpResponse.BodyHandlers.ofString());
 
     String json = response.body();
-        System.out.println(json);
+    System.out.println(json);
+    return (json);
+}
+
 }
