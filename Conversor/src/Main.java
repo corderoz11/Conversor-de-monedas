@@ -1,4 +1,8 @@
 import java.util.Scanner;
+import com.google.gson.Gson;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.GsonBuilder;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -25,6 +29,17 @@ public class Main {
 
         String json = consulta.Req();
         System.out.println(json);
+
+        Gson gson = new GsonBuilder()
+
+                .create();
+
+        ReqFilter reqfilter = gson.fromJson(json, ReqFilter.class);
+        System.out.println(reqfilter);
+        Resultado ok = new Resultado(reqfilter);
+        String ok2 = ok.getRate();
+
+        System.out.println(ok2);
 
     }
     }
