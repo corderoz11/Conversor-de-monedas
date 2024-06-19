@@ -6,6 +6,8 @@ import java.net.http.HttpResponse;
 
 public class Consulta {
     public String valor ;
+    public String base ;
+    public String target ;
 
 
 
@@ -13,9 +15,17 @@ public class Consulta {
 
         this.valor = valor;
     }
+    public void  Vbase (String base) {
+
+        this.base = base;
+    }
+    public void  Vtarget (String target) {
+
+        this.target = target;
+    }
 
     public String Req () {
-        String direccion = "https://v6.exchangerate-api.com/v6/bafdccdcc5396ce087f658b1/pair/EUR/"+valor;
+        String direccion = "https://v6.exchangerate-api.com/v6/bafdccdcc5396ce087f658b1/pair/"+base+"/"+target+"/"+valor;
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
