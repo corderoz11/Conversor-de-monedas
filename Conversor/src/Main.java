@@ -8,17 +8,27 @@ public class Main {
     public static void main(String[] args) {
 
 
-
-        Scanner inicio = new Scanner(System.in);
         System.out.println("Conversor de Divisas");
-        System.out.println("Presione 1 para continuar");
+        System.out.println("");
+        System.out.println("Dijite 1 para continuar");
 
-        while(Integer.parseInt(inicio.nextLine()) == 1){
+        Scanner lectura = new Scanner(System.in);
 
+
+        while(Integer.parseInt(lectura.nextLine())==1){
+
+            System.out.println("Dijite unicamente el numero de la opcion con la conversion deseada");
             System.out.println("");
+            System.out.println("1) Dolar >> Peso Argentino");
+            System.out.println("2) Peso Argentino >> Dolar");
+            System.out.println("3) Dolar >> Real Brasileño");
+            System.out.println("4) real Brazileño >> Dolar");
+            System.out.println("5) Dolar >> Peso Colombiano");
+            System.out.println("6) Peso Colombiano >> Dolar");
 
-            Scanner lectura = new Scanner(System.in);
-            System.out.println("Escriba");
+
+
+
 
             Logica logica = new Logica();
             logica.Logica(Integer.parseInt(lectura.nextLine()));
@@ -26,12 +36,13 @@ public class Main {
             String resultado2 = logica.Target();
             System.out.println(resultado);
             System.out.println(resultado2);
+
             System.out.println("Ingrese el valor que desea convertir: ");
-            Scanner lectura2 = new Scanner(System.in);
+
 
 
             Consulta consulta = new Consulta();
-            consulta.Valor(lectura2.nextLine());
+            consulta.Valor(lectura.nextLine());
             consulta.Vbase(logica.Base());
             consulta.Vtarget(logica.Target());
 
@@ -49,9 +60,16 @@ public class Main {
 
             System.out.println(ok2);
 
+            System.out.println("El resultado de la convercion de"+consulta.getValor()+" "+logica.Base()+"a"+logica.Target()+"es de"+ok.getResultadoconversion());
+            System.out.println("");
+
+            System.out.println("Dijite 1 para realizar una nueva conversion o dijite 7 para salir");
+
+
+
+
+
         }
-
-
 
 
 
