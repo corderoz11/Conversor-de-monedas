@@ -6,9 +6,7 @@ import java.net.http.HttpResponse;
 
 public class Consulta {
 
-    public String getValor() {
-        return valor;
-    }
+
 
     public String valor ;
     public String base ;
@@ -50,6 +48,8 @@ public class Consulta {
 
     }
 
-
+    public String getValor() {
+        return valor;
+    }
 
 }

@@ -7,16 +7,19 @@ import com.google.gson.GsonBuilder;
 public class Main {
     public static void main(String[] args) {
 
-
+        System.out.println("//////////////////////////////////////////////////////");
+        System.out.println("");
         System.out.println("Conversor de Divisas");
         System.out.println("");
         System.out.println("Dijite 1 para continuar");
+        System.out.println("");
 
         Scanner lectura = new Scanner(System.in);
 
-
         while(Integer.parseInt(lectura.nextLine())==1){
 
+            System.out.println("//////////////////////////////////////////////////////");
+            System.out.println("");
             System.out.println("Dijite unicamente el numero de la opcion con la conversion deseada");
             System.out.println("");
             System.out.println("1) Dolar >> Peso Argentino");
@@ -32,11 +35,9 @@ public class Main {
 
             Logica logica = new Logica();
             logica.Logica(Integer.parseInt(lectura.nextLine()));
-            String resultado = logica.Base();
-            String resultado2 = logica.Target();
-            System.out.println(resultado);
-            System.out.println(resultado2);
 
+            System.out.println("//////////////////////////////////////////////////////");
+            System.out.println("");
             System.out.println("Ingrese el valor que desea convertir: ");
 
 
@@ -54,22 +55,38 @@ public class Main {
                     .create();
 
             ReqFilter reqfilter = gson.fromJson(json, ReqFilter.class);
-            System.out.println(reqfilter);
             Resultado ok = new Resultado(reqfilter);
-            String ok2 = ok.getRate();
 
-            System.out.println(ok2);
-
-            System.out.println("El resultado de la convercion de"+consulta.getValor()+" "+logica.Base()+"a"+logica.Target()+"es de"+ok.getResultadoconversion());
+            System.out.println("//////////////////////////////////////////////////////");
+            System.out.println("");
+            System.out.println("El resultado de la convercion de "+consulta.getValor()+" "+logica.Base()+" a "+logica.Target()+" es de "+ok.getResultadoconversion()+" "+logica.Target());
             System.out.println("");
 
+            System.out.println("//////////////////////////////////////////////////////");
+            System.out.println("");
             System.out.println("Dijite 1 para realizar una nueva conversion o dijite 7 para salir");
 
+            LogicaSalida logicasalida = new LogicaSalida();
+            logicasalida.LogicaSalida(Integer.parseInt(lectura.nextLine()));
+            boolean ok3 = logicasalida.isSalir();
 
+            if(ok3 == false){
 
+                System.out.println("//////////////////////////////////////////////////////");
+                System.out.println("");
+                System.out.println("Finalizando programa");
+                break;
+            }else {
+
+                System.out.println("//////////////////////////////////////////////////////");
+                System.out.println("");
+                System.out.println("Preparando...");
+                System.out.println("Dijite 1 para continuar");
+            }
 
 
         }
+
 
 
 
