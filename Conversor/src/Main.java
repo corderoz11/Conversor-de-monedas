@@ -9,37 +9,52 @@ public class Main {
 
 
 
-        Scanner lectura = new Scanner(System.in);
-        System.out.println("Escriba");
+        Scanner inicio = new Scanner(System.in);
+        System.out.println("Conversor de Divisas");
+        System.out.println("Presione 1 para continuar");
 
-        Logica logica = new Logica();
-        logica.Logica(Integer.parseInt(lectura.nextLine()));
-        String resultado = logica.Base();
-        String resultado2 = logica.Target();
-        System.out.println(resultado);
-        System.out.println(resultado2);
-        System.out.println("Ingrese el valor que desea convertir: ");
-        Scanner lectura2 = new Scanner(System.in);
+        while(Integer.parseInt(inicio.nextLine()) == 1){
+
+            System.out.println("");
+
+            Scanner lectura = new Scanner(System.in);
+            System.out.println("Escriba");
+
+            Logica logica = new Logica();
+            logica.Logica(Integer.parseInt(lectura.nextLine()));
+            String resultado = logica.Base();
+            String resultado2 = logica.Target();
+            System.out.println(resultado);
+            System.out.println(resultado2);
+            System.out.println("Ingrese el valor que desea convertir: ");
+            Scanner lectura2 = new Scanner(System.in);
 
 
-        Consulta consulta = new Consulta();
-        consulta.Valor(lectura2.nextLine());
-        consulta.Vbase(logica.Base());
-        consulta.Vtarget(logica.Target());
+            Consulta consulta = new Consulta();
+            consulta.Valor(lectura2.nextLine());
+            consulta.Vbase(logica.Base());
+            consulta.Vtarget(logica.Target());
 
-        String json = consulta.Req();
-        System.out.println(json);
+            String json = consulta.Req();
+            System.out.println(json);
 
-        Gson gson = new GsonBuilder()
+            Gson gson = new GsonBuilder()
 
-                .create();
+                    .create();
 
-        ReqFilter reqfilter = gson.fromJson(json, ReqFilter.class);
-        System.out.println(reqfilter);
-        Resultado ok = new Resultado(reqfilter);
-        String ok2 = ok.getRate();
+            ReqFilter reqfilter = gson.fromJson(json, ReqFilter.class);
+            System.out.println(reqfilter);
+            Resultado ok = new Resultado(reqfilter);
+            String ok2 = ok.getRate();
 
-        System.out.println(ok2);
+            System.out.println(ok2);
+
+        }
+
+
+
+
+
 
     }
     }

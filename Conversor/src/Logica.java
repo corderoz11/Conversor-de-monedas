@@ -29,10 +29,7 @@ public class Logica {
                 base = "COP";
                 target = "USD";
                 break;
-            case 7 :
-                base = "USD";
-                target = "ARS";
-                break;
+
         }
 
     }
