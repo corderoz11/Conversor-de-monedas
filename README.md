@@ -8,7 +8,7 @@ brindandonos la ventaja de hacer varias conversiones en una sola aplicacion con 
 
 <p>Funcionamiento</p>
 
-<p>*En primera instancia se solicitara que se dijite el numro 1 en la terminal de la consola para inicia el programa</p>
+<p>*En primera instancia se solicitara que se dijite el numero 1 en la terminal de la consola para inicia el programa</p>
 
 <p>////////////////////////////////////////////////////////</p>
 
@@ -36,7 +36,7 @@ brindandonos la ventaja de hacer varias conversiones en una sola aplicacion con 
 <p>Ingrese el valor que desea convertir</p>
 
 <p>*La aplicacion hara la conversion, nos dara el resultado y por ultimo
-    nos va pedir que dijite un 1 para realizar otra conversion o dijitar 7 
+    nos va pedir que dijite un 1 para realizar otra conversion o que dijite 7 
      para salir y finalizar el programa</p>
 
 <p>/////////////////////////////////////////////////////////</p>
